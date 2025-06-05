@@ -1,0 +1,26 @@
+.nav-section{
+    background-color: rgb(24, 37, 6);
+    color:white;
+    min-height:100px;
+   display:flex;
+   justify-content: space-between;
+   align-items: center;
+   padding:20px;
+   font-family: tahoma;
+   p{
+    flex:2;
+   }
+   h3{
+    flex:4.5;
+    font-size:30px;
+   }
+   ul{
+    flex:3.5;
+    display:flex;
+    justify-content: space-between;
+    list-style-type: none;
+    li{
+        margin:5px;
+    }
+   }
+}
