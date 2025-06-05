@@ -1,6 +1,24 @@
 import './loginform.css';
+import { useState, } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 function LoginForm(props){
+
+    
+  const [password,setPassword] = useState('');
+  const [user,setUser] = useState('')
+     const user_ = "dominic";
+  const password_ = "1234"
+
+  const navigate = useNavigate()
+function login(user1,pass1){
+ if(pass1 === password_ && user1 === user_){
+navigate('/dashboard')
+ }else{
+    alert("wrong credentials. Try again.")
+ }
+ }
     return(
        <div className="login-form">
         <form>
@@ -11,6 +29,7 @@ function LoginForm(props){
                 <label className="user labels">
                     <h3>Username: </h3>
                     <input
+                    onChange={(e)=>setUser(e.target.value)}
                     type="text"
                     />
                 </label>
@@ -19,12 +38,15 @@ function LoginForm(props){
                 <label className=" pass labels">
                     <h3>Pasword: </h3>
                     <input
+                    onChange={(e)=>setPassword(e.target.value)}
                     type="password"
                     />
                 </label>
             </div>
             <div className="login-button">
-                <button>Login</button>
+                <button
+                onClick={()=>login(user,password)}
+                >Login</button>
             </div>
         </form>
      

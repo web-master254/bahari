@@ -3,3 +3,41 @@
     margin:0;
     
 }
+
+@media only screen and (max-width:620px){
+
+    *{
+        font-size:16px;
+    }
+    body{
+        display: block;
+        box-sizing: border-box;
+        align-items:center;
+    }
+    .nav-section{
+        .icon{
+            display:none;
+        }
+        .nav-list{
+            ul{
+                display:none;
+            }
+        }
+    }
+
+    .login-form{
+       form{
+        padding:20px;
+        min-width:80%;
+        min-height:40%;
+        box-shadow: 1px 2px 3px lightgrey;
+        
+        .login-button{
+            button{
+                width:96%;
+                
+            }
+        }
+       }
+    }
+}
