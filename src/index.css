@@ -1,13 +1,22 @@
 *{
     padding:0;
     margin:0;
+    box-sizing: border-box;
     
 }
-
+::-webkit-scrollbar{
+    display: none;
+}
 @media only screen and (max-width:620px){
 
     *{
         font-size:16px;
+    }
+    .dashboard{
+        display:flex;
+        .dashboard-left{
+            display:none;
+        }
     }
     body{
         display: block;
@@ -24,7 +33,20 @@
             }
         }
     }
-
+  .space .title{
+    display:block;
+    text-align: center;
+    font-size:14px;
+    .search{
+        width:100%;
+        input{
+            font-size:12px;
+        }
+        button{
+            font-size:12px;
+        }
+    }
+  }
     .login-form{
        form{
         padding:20px;
@@ -39,5 +61,16 @@
             }
         }
        }
+    }
+    table{
+        margin-top:50px;
+        width:100%;
+        thead{
+        position:fixed;
+        top: calc(120px);
+        
+        }
+        top:calc( 100px );
+        overflow: scroll;
     }
 }

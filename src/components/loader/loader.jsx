@@ -3,9 +3,9 @@ function Loader(){
 
     return(
         <div className="loader">
-            <h3>Please wait...</h3>
+           
             <div className="spinner">
-
+            <h3>Please wait...</h3>
             </div>
         </div>
     )
