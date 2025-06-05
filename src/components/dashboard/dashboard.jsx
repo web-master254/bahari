@@ -97,8 +97,8 @@ const data_table = data.map(
         </div>
         <div className='space'>
             <div className='title'>
-            <h4>Welcome, Dominic</h4>
-                <h2>Bahari Solidarity Group</h2>
+                <div><h4>Welcome, Dominic</h4></div>
+                <div><h2>Bahari Solidarity Group</h2></div>
                 <div className='search'>
                 <input 
                 type='text'
