@@ -1,6 +1,7 @@
 import './dashboard.css'
 import NavBar from '../nav_bar/nav';
 import Loader from '../loader/loader';
+import Footer from '../footer/Footer';
 import { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -90,7 +91,7 @@ async function search_data(id){
                 <div className='expense-title'>
                     <h3>Other Expenses</h3>
                 </div>
-                <div className="details">Interest on Loans: Ksh 30000</div>
+                <div className="details">Total minor expenses: Ksh 30000</div>
                 <div className="details">Transport: Ksh 30222</div>
                 <div className="details">Total amount: 2000</div>
                 <div className='btns'>
@@ -101,16 +102,16 @@ async function search_data(id){
                 <div className='expense-title'>
                     <h3>Other Incomes</h3>
                 </div>
-                <div className="details">Total Expenses: Ksh 30000</div>
-                <div className="details">Previous Expenses: Ksh 30222</div>
-                <div className="details">Deviation: - Ksh 222</div>
+                <div className="details">Total income: Ksh 30000</div>
+                <div className="details">Previous income: Ksh 30222</div>
+                <div className="details">Deviation:  Ksh 222</div>
                 <div className="details">Remarks: Positive impact</div>
                 <div className='btns'>
                     <button>Check details</button>
                 </div>
             </div>
         </div>
-        
+        <Footer/>
     </div>
     )
 }

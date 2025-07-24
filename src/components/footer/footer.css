@@ -2,6 +2,10 @@
     height:5%;
     background:transparent;
     width:100%;
+    background-image: url('../../images/pexels-energepic-com-27411-2988232\ \(1\).webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     margin: 0px auto;
     color:white;
     text-align:center;

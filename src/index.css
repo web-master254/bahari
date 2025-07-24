@@ -28,6 +28,10 @@
 *{
     font-size:16px;
 }
+
+#root{
+    height:100%;
+}
 .dashboard .remarks{
 display: flex;
 flex-direction: column;
@@ -36,9 +40,16 @@ flex-direction: column;
     height:20%;
 }
 
+
 .btns{
     padding-top:20px;
 }
+}
+
+.footer{
+    position:relative;
+    bottom:0;
+    left:0;
 }
 
 .nav-section{
