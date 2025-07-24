@@ -1,25 +1,34 @@
 .loader{
+    
     height:100vh;
     width:100vw;
-    display: flex;
-    justify-content:center;
+    display: grid;
+    place-content: center;
+    
+
     .spinner{
+        color:yellow;
+    content:'';
     animation:spinner;
-    animation-duration: 2s;
+    animation-duration: 0s;
     animation-iteration-count: infinite;
     }
 }
 
 @keyframes spinner{
     0%{
-       opacity:0.2
+       content:'please wait';
+       color:red;
     }
 
     50%{
-        opacity: 0.6;
+        content:'please wait..';
+        color:blue;
+    }
+    75%{
+        content:'please wait ....';
     }
     100%{
-        opacity: 1;
-       
+        content:'please wait ......'
     }
 }

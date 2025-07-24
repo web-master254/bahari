@@ -1,4 +1,5 @@
 import './dashboard.css'
+import NavBar from '../nav_bar/nav';
 import Loader from '../loader/loader';
 import { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -9,32 +10,15 @@ function Dashboard(props){
     const [data,setData] = useState([]);
     const [loading,setLoading] = useState(false);
     const [ error, setError] = useState('');
-    const [id_, setID] = useState('')
+    const [id_, setID] = useState('');
+    const [isOpen,setIsOpen] = useState(false)
 
-    useEffect(
-        ()=>{
-   setLoading(true)
-   fetch("https://jsonplaceholder.typicode.com/todos")
-   .then(
-    (res)=>res.json()
-   ).then(
-    (d)=> {setData(d)
-    setLoading(false)
-    }
-   ).catch(
-    (err)=> setError(err)
-   )
-   
-        },[]
-    )
 
-    useEffect(
-        ()=>{
-     search_data(id_).then(
-        (d)=> setData(d)
-     )
-        },[]
-    )
+    const open_close = ()=> { return setIsOpen(!isOpen)}
+    
+function show_profit_page(){
+    alert(232)
+}
 if(loading){
     return <Loader/>
 }
@@ -47,85 +31,86 @@ async function search_data(id){
 }
 
 
-const data_table = data.map(
-    (d)=> {
-        return (
-            <tr>
-                <td>{d.title}</td>
-                <td>{d.userId}</td>
-                <td>{d.completed ? 'Yes' : 'No'}</td>
-            </tr>
-        )
-    }
-)
 
     return(
     <div className="dashboard">
-        
-        <div className="dashboard-left">
-            <div className='logo text'>
-                <h2>B</h2>
-                <h4>Bahari Solidarity</h4>
+        <NavBar/>
+        <div className='remarks'>
+            <div className="menus previous">
+                <div className='sales-title'>
+                    <h3>Sales</h3>
                 </div>
+                <div className="details">Total Sales: Ksh 30000</div>
+                <div className="details">Previous Sales: Ksh 30222</div>
+                <div className="details">Deviation: - Ksh 222</div>
+                <div className="details">Remarks: negative deviation</div>
+                <div className='btns'>
+                    <button>Check details</button>
+                </div>
+            </div>
+            <div className="menus current">
+                <div className='expense-title'>
+                    <h3>Expenses</h3>
+                </div>
+                <div className="details">Total Expenses: Ksh 30000</div>
+                <div className="details">Previous Expenses: Ksh 30222</div>
+                <div className="details">Deviation: - Ksh 222</div>
+                <div className="details">Remarks: Positive impact</div>
+                <div className='btns'>
+                    <button>Check details</button>
+                </div>
+            </div>
+            <div className="menus dev">
+                <div className='expense-title'>
+                    <h3>Profit</h3>
+                </div>
+                <div className="details">Net Profit: Ksh 30000</div>
+                <div className="details">Previous Profit: Ksh 30222</div>
+                <div className="details">Deviation: - Ksh 222</div>
+                <div className="details">Remarks: Reduced Profit</div>
+                <div className='btns'>
+                    <button
+                    onClick={show_profit_page}
+                    >Check details</button>
+                </div>
+            </div>
+            <div className="menus previous">
+               <div className='expense-title'>
+                    <h3>Loans</h3>
+                </div>
+                <div className="details">Total Loans</div>
+                <div className="details">Interest Paid: Ksh 30222</div>
+                <div className="details">Remaining Loans: - Ksh 222</div>
+                <div className="details">Remarks: Positive impact</div>
+                <div className='btns'>
+                    <button>Check details</button>
+                </div>
+            </div>
+            <div className="menus current">
+                <div className='expense-title'>
+                    <h3>Other Expenses</h3>
+                </div>
+                <div className="details">Interest on Loans: Ksh 30000</div>
+                <div className="details">Transport: Ksh 30222</div>
+                <div className="details">Total amount: 2000</div>
+                <div className='btns'>
+                    <button>Check details</button>
+                </div>
+            </div>
+            <div className="menus dev">
+                <div className='expense-title'>
+                    <h3>Other Incomes</h3>
+                </div>
+                <div className="details">Total Expenses: Ksh 30000</div>
+                <div className="details">Previous Expenses: Ksh 30222</div>
+                <div className="details">Deviation: - Ksh 222</div>
+                <div className="details">Remarks: Positive impact</div>
+                <div className='btns'>
+                    <button>Check details</button>
+                </div>
+            </div>
+        </div>
         
-        <div className="dashboard-nav">
-        <h3>Members</h3>
-        <ul>
-            <li><a href="#">Members List</a></li>
-            <li><a href="#">Total Contribution</a></li>
-        </ul>
-    
-        </div>
-        <div className="setting">
-        <h3>Settings</h3>
-        <ul>
-            <li><a href="#">Change Theme</a></li>
-            <li><a href="#">Logout</a></li>
-        </ul>
-        </div>
-        <div className="member-profile">
-            <h3>Profile</h3>
-        <ul>
-            <li><a href="#">Check Members</a></li>
-            <li><a href="#">Add contribution</a></li>
-            <li><a href="#">Remove a Member</a></li>
-        </ul>
-        </div>
-        <button 
-        onClick={()=>navigate('/')}
-        id="logout">Logout</button>
-        </div>
-        <div className='space'>
-            <div className='title'>
-                <div><h4>Welcome, Dominic</h4></div>
-                <div><h2>Bahari Solidarity Group</h2></div>
-                <div className='search'>
-                <input 
-                type='text'
-                onChange={(e)=>setID(e.target.value)}
-                placeholder='Search member ...'
-                />
-                <button
-                onClick={()=>search_data(id_)}
-                >Search</button>
-            </div>
-            </div>
-           
-       <div className='data-section'>
-        {<table>
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>User ID</th>
-                    <th>Completed</th>
-                </tr>
-            </thead>
-            <tbody>
-                {data_table}
-            </tbody>
-        </table>}
-       </div>
-        </div>
     </div>
     )
 }

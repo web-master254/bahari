@@ -1,19 +1,20 @@
-.nav-section{
-    background-color: rgb(24, 37, 6);
-    color:white;
+.nav-sect{
     min-height:100px;
-   display:flex;
-   justify-content: space-between;
-   align-items: center;
+   display:grid;
+   background-image: url('../../images/pexels-carlos-pernalete-tua-210498-730647.webp');
+   background-color: green;
+   background-position:calc(-10px -0px);
+   place-content: center;
+   background-repeat: no-repeat;
+   background-attachment:fixed;
    padding:20px;
    font-family: tahoma;
+  opacity:0.8;
+  color: white;
    p{
     flex:2;
    }
-   h3{
-    flex:4.5;
-    font-size:30px;
-   }
+  
    ul{
     flex:3.5;
     display:flex;
@@ -23,4 +24,9 @@
         margin:5px;
     }
    }
+   .title{
+    text-align:center;
+    padding:2rem;
 }
+}
+
